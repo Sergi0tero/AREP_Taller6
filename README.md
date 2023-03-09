@@ -57,7 +57,8 @@ Estas son las diferentes capaz que podemos ver:
 ## Pruebas
 ![image](https://user-images.githubusercontent.com/98189066/224149980-83d7e0ff-a496-4b9b-b3e2-0de18bf7cde6.png)
 ![image](https://user-images.githubusercontent.com/98189066/224150051-af734c39-ea0a-417d-b00a-81be6608a498.png)
-![image](https://user-images.githubusercontent.com/98189066/224179443-1a00739f-963b-4373-ace1-7753d99375c7.png)
+![image](https://user-images.githubusercontent.com/98189066/224179616-694e0692-b539-42c2-8a5e-c04dd9500b7f.png)
+
 
 
 
