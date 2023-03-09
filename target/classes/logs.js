@@ -1,3 +1,4 @@
+
 function getLogs(){
     logsAPIClient.getLogs();
 }
