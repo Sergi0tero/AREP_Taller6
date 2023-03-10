@@ -30,6 +30,9 @@ mvn package
 ## Correr el código
 Para correr la clase main, la cual se encuentra en FirstApp.java, corremos los siguientes comando en la terminal:
 ```
+mvn clean install
+```
+```
 mvn compile
 ```
 ```
