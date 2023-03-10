@@ -43,9 +43,6 @@ java -cp target/classes RoundRobin
 ## Diseño
 El proyecto fue realizado en Java. El ciclo de vida empieza por el usuario, quien utiliza la pagina inicial con la ruta /logs.html. En esta pagina inical el usuaro puede crear y consultar los logs dados, se le presentan solo 10. Esto por detras busca en una base de datos de MondoDB usando Spark.
 
-## Patrones
-- Singleton
-
 ## Modular
 Estas son las diferentes capaz que podemos ver:
 - Spark
