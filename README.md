@@ -2,7 +2,7 @@
 ## Autor:
 ### Sergio Andrés Otero Herrera
 
-# Taller 3 AREP:
+# Taller 5 AREP:
 En este taller se hizo uso de docker para crear imagenes y diferentes contenedores en la nube. En este caso se uso AWS. Se creo un balanceador de carga tipo RoundRobin, diferentes instancias de un amisma API creada con Spark, las cuales fueron conectadas a una misma base de datos de MongoDB. con el objetivo de que el usuario realice la consulta a nuestra api de forma rapida  y eficiente.
 
 ![image](https://user-images.githubusercontent.com/98189066/224153010-9c7cb7eb-2c74-40ba-9ecd-aedc1c669c92.png)
