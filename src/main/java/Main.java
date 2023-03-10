@@ -1,13 +1,28 @@
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import org.bson.Document;
+
+import javax.print.Doc;
 import java.time.Instant;
 import java.util.ArrayList;
 
 import static spark.Spark.*;
 
 public class Main {
-    static ArrayList<String> logs = new ArrayList<>();
+    private static MongoClient client = null;
+    private static String url = "172.31.60.208:27017";
+    private static MongoDatabase db = null;
+    private static MongoCollection<Document> collec;
+
+    public static void createConnection(){
+        client = new MongoClient(url);
+        db = client.getDatabase("admin");
+        collec = db.getCollection("basePrueba");
+    }
     public static void main(String... args) {
-        staticFileLocation("/");
+        createConnection();
         port(getPort());
         postLog();
         getlogs();
@@ -16,17 +31,18 @@ public class Main {
     public static void getlogs(){
         get("logs", (req,res) -> {
             ArrayList<String> shownLogs = new ArrayList<>();
-            int limit = Math.min(logs.size(), 10);
-            for (int i = 0 ; i < limit ; i++){
-                shownLogs.add(logs.get(i));
+            for (Document d : collec.find()){
+                shownLogs.add(d.toJson());
             }
-            return shownLogs.toString();
+            return shownLogs;
         });
     }
 
     public static void postLog(){
         post("logs", (req,res) -> {
-            logs.add(req.body() + Instant.now());
+            Document newDoc = new Document("body", req.body());
+            newDoc.put("date", Instant.now());
+            collec.insertOne(newDoc);
             return req.body() + Instant.now();
         });
     }

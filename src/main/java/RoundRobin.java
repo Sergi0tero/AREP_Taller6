@@ -10,28 +10,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-import static spark.Spark.get;
-import static spark.Spark.post;
-import static spark.Spark.port;
+import static spark.Spark.*;
 
 
 public class RoundRobin {
-    private static MongoClient client = null;
-    private static String url = "localhost:27017";
-    private static MongoDatabase db = null;
-    private static MongoCollection<Document> collec;
-
-    public static void createConnection(){
-        client = new MongoClient(url);
-        db = client.getDatabase("admin");
-        collec = db.getCollection("database1");
-
-    }
     public static void main(String[] args) {
-        createConnection();
+        staticFileLocation("/");
         port(getPort());
         get("/logs", (request, response) -> {
-            URL url = new URL("http://localhost:4088/logs");
+            URL url = new URL("http://172.31.60.208:4088/logs");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
@@ -50,7 +37,7 @@ public class RoundRobin {
             return responseBody;
         });
         post("/logs", (request, response) -> {
-            URL url = new URL("http://localhost:4088/logs");
+            URL url = new URL("http://172.31.60.208:4088/logs");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "text/plain");
