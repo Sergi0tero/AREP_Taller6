@@ -59,8 +59,8 @@ Estas son las diferentes capaz que podemos ver:
 ![image](https://user-images.githubusercontent.com/98189066/224150051-af734c39-ea0a-417d-b00a-81be6608a498.png)
 ![image](https://user-images.githubusercontent.com/98189066/224179616-694e0692-b539-42c2-8a5e-c04dd9500b7f.png)
 ![image](https://user-images.githubusercontent.com/98189066/224208446-88db633c-8522-475e-9478-a85ee2838ed5.png)
-
-
+![image](https://user-images.githubusercontent.com/98189066/224208785-d5a62279-eda9-4ef1-8953-f34e9f6aa5bf.png)
+![image](https://user-images.githubusercontent.com/98189066/224208853-de29cd94-3ce2-497e-ae0f-e7faee888072.png)
 
 
 ## Version
