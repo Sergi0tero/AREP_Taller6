@@ -39,10 +39,10 @@ o
 ```
 java -cp target/classes RoundRobin
 ```
+**Si se quiere probar de forma local, se debe cambiar las IPs en las clases ```Main``` y ```RoundRobin``` a localhost**
 
 ## Diseño
-El proyecto fue realizado en Java. El ciclo de vida empieza por el usuario, quien, usando las opciones dadas en el inicio, elige el archivo que desee. Continua con el servidor redirecciona dependiendo del servicio elegido.
-Este servicio lee el archivo seleccionado en una direccion especificada. Llama a nuestra nueva clase Spark, la cual utiliza una funcion lambda anteriormente creada para saber que peticion HTTP esta haciendo el usuario (Actualmente implementadas estan el GET y el POST, se recomienda POSTMAN para usar el POST). Si no, realiza las consultas a los nuevos componentes creados
+El proyecto fue realizado en Java. El ciclo de vida empieza por el usuario, quien utiliza la pagina inicial con la ruta /logs.html. En esta pagina inical el usuaro puede crear y consultar los logs dados, se le presentan solo 10. Esto por detras busca en una base de datos de MondoDB usando Spark.
 
 ## Patrones
 - Singleton
@@ -58,6 +58,7 @@ Estas son las diferentes capaz que podemos ver:
 ![image](https://user-images.githubusercontent.com/98189066/224149980-83d7e0ff-a496-4b9b-b3e2-0de18bf7cde6.png)
 ![image](https://user-images.githubusercontent.com/98189066/224150051-af734c39-ea0a-417d-b00a-81be6608a498.png)
 ![image](https://user-images.githubusercontent.com/98189066/224179616-694e0692-b539-42c2-8a5e-c04dd9500b7f.png)
+![image](https://user-images.githubusercontent.com/98189066/224208446-88db633c-8522-475e-9478-a85ee2838ed5.png)
 
 
 
