@@ -33,10 +33,6 @@ Para correr la clase main, la cual se encuentra en FirstApp.java, corremos los s
 mvn compile
 ```
 ```
-mvn exec:java
-```
-o
-```
 java -cp target/classes RoundRobin
 ```
 **Si se quiere probar de forma local, se debe cambiar las IPs en las clases ```Main``` y ```RoundRobin``` a localhost**
