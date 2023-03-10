@@ -12,7 +12,7 @@ import static spark.Spark.*;
 
 public class Main {
     private static MongoClient client = null;
-    private static String url = "172.31.60.208:27017";
+    private static String url = "ec2-100-26-168-24.compute-1.amazonaws.com:27017";
     private static MongoDatabase db = null;
     private static MongoCollection<Document> collec;
 

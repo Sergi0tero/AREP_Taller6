@@ -14,14 +14,15 @@ import static spark.Spark.*;
 
 public class RoundRobin {
     public static String randomizePort(String url, String path){
-        int consultPort = (int) (Math.random() * (3)) + 34001;
-        return url + consultPort + path;
+        String[] instances = {"18.214.88.158", "44.203.243.60", "44.202.223.84"};
+        String consultPort = instances[(int) (Math.random() * (3))];
+        return url + "4088" + path;
     }
     public static void main(String[] args) {
         staticFileLocation("/");
         port(getPort());
         get("/logs", (request, response) -> {
-            URL url = new URL(randomizePort("http://localhost:", "/logs"));
+            URL url = new URL(randomizePort("http://ec2-54-226-183-91.compute-1.amazonaws.com:", "/logs"));
             //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -41,7 +42,7 @@ public class RoundRobin {
             return responseBody;
         });
         post("/logs", (request, response) -> {
-            URL url = new URL(randomizePort("http://localhost:", "/logs"));
+            URL url = new URL(randomizePort("http://ec2-54-226-183-91.compute-1.amazonaws.com:", "/logs"));
             //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
