@@ -22,7 +22,7 @@ public class RoundRobin {
         port(getPort());
         get("/logs", (request, response) -> {
             URL url = new URL(randomizePort("http://localhost:", "/logs"));
-            //"http://172.31.60.208:"
+            //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
             conn.connect();
@@ -42,7 +42,7 @@ public class RoundRobin {
         });
         post("/logs", (request, response) -> {
             URL url = new URL(randomizePort("http://localhost:", "/logs"));
-            //"http://172.31.60.208:"
+            //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Content-Type", "text/plain");
