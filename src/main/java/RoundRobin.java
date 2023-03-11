@@ -13,16 +13,18 @@ import java.util.Scanner;
 import static spark.Spark.*;
 
 public class RoundRobin {
-    public static String randomizePort(String url, String path){
-        String[] instances = {"18.214.88.158", "44.203.243.60", "44.202.223.84"};
+    public static String randomizePort(String path){
+        String[] instances = {"44.197.184.18", "3.218.150.127", "52.3.247.40"};
         String consultPort = instances[(int) (Math.random() * (3))];
-        return url + "4088" + path;
+        return "http://" + consultPort + ":4088" + path;
     }
     public static void main(String[] args) {
         staticFileLocation("/");
         port(getPort());
         get("/logs", (request, response) -> {
-            URL url = new URL(randomizePort("http://ec2-54-226-183-91.compute-1.amazonaws.com:", "/logs"));
+            String consultURL = randomizePort("/logs");
+            System.out.println("Prueba puerto " + consultURL);
+            URL url = new URL(consultURL);
             //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -42,7 +44,7 @@ public class RoundRobin {
             return responseBody;
         });
         post("/logs", (request, response) -> {
-            URL url = new URL(randomizePort("http://ec2-54-226-183-91.compute-1.amazonaws.com:", "/logs"));
+            URL url = new URL(randomizePort("/logs"));
             //"http://172.31.60.208:" "ec2-100-24-74-94.compute-1.amazonaws.com:"
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
